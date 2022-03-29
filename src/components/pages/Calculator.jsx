@@ -1,9 +1,9 @@
 /* eslint-disable no-eval */
 import React from 'react'
-import Input from '../Input'
-import Result from '../Result'
-import Number from '../Number'
-import Operator from '../Operator'
+import Input from '../components-calculator/Input'
+import Result from '../components-calculator/Result'
+import Number from '../components-calculator/Number'
+import Operator from '../components-calculator/Operator'
 import '../../styles/components/calculator.scss'
 export const Calculator = () => {
   const [result, setResult] = React.useState('')
