@@ -5,14 +5,16 @@ import FilterPassword from '../components-genpassword/FilterPassword.jsx'
 import CreatePasswordBtn from '../components-genpassword/CreatePasswordBtn.jsx'
 import '../../styles/components/genpassword.scss'
 export const GenPassword = () => {
+  const [value, setValue] = React.useState('')
+  console.log(value)
   return (
     <div className='genpass'>
       <div className='header'>
-        <DisplayPassword />
-        <CoppyButton />
+        <DisplayPassword value={value} />
+        <CoppyButton value={value} />
       </div>
       <FilterPassword />
-      <CreatePasswordBtn />
+      <CreatePasswordBtn setValue={setValue}/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
-const DisplayPassword = () => {
+const DisplayPassword = ({ value }) => {
   return (
-    <input id='displayPass' type='text' disabled />
+    <input id='displayPass' type='text' value={value} disabled />
   )
 }
 
