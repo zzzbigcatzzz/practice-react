@@ -13,10 +13,10 @@ ReactDOM.render(
         <Router>
             <Routes>
                 {/* MainLayout sẽ dùng chung cho các page */}
-                <Route path='/' element={<MainLayout/>}>
+                <Route path='/' element={<MainLayout />}>
                     {/* Các element sẽ nằm trong MainLayout */}
-                    <Route path='/calculation' element={<Calculator/>}/>
-                    <Route path='/gen-password' element={<GenPassword/>}/>
+                    <Route path='/calculation' element={<Calculator />} />
+                    <Route path='/gen-password' element={<GenPassword />} />
                 </Route>
             </Routes>
         </Router>
