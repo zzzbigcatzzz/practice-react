@@ -4,7 +4,18 @@ const CreatePasswordBtn = ({ arrFilter, setValue }) => {
     arrFilter.forEach((filter) => {
       result = filter.func(result, filter.value)
     })
-    setValue(result)
+    setValue(shuffle(result))
+  }
+  const shuffle = s => {
+    const arr = s.split('')
+
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const tmp = arr[i]
+      arr[i] = arr[j]
+      arr[j] = tmp
+    }
+    return arr.join('')
   }
 
   return (
