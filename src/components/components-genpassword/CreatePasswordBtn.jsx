@@ -1,18 +1,14 @@
-const CreatePasswordBtn = ({ setValue }) => {
-  // eslint-disable-next-line space-before-function-paren
-  function genPass(length) {
+const CreatePasswordBtn = ({ arrFilter, setValue }) => {
+  const handleGenPass = () => {
     let result = ''
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@$%^&*_+|:?'
-    const charactersLength = characters.length
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() *
-        charactersLength))
-    }
-    return result
+    arrFilter.forEach((filter) => {
+      result = filter.func(result, filter.value)
+    })
+    setValue(result)
   }
-  return (
 
-    <button id="generateBtn" onClick={() => setValue(genPass(8))}>Tạo Mật Khẩu</button>
+  return (
+    <button id="generateBtn" onClick={handleGenPass}>Tạo Mật Khẩu</button>
 
   )
 }
