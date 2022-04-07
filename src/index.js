@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals'
 import { MainLayout } from './components/layout/MainLayout'
 import { GenPassword } from './components/pages/GenPassword'
 import { Calculator } from './components/pages/Calculator'
+import { MoveObject } from './components/pages/MoveObject'
 
 ReactDOM.render(
     <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
                     {/* Các element sẽ nằm trong MainLayout */}
                     <Route path='/calculation' element={<Calculator />} />
                     <Route path='/gen-password' element={<GenPassword />} />
+                    <Route path='/move-object' element={<MoveObject />} />
                 </Route>
             </Routes>
         </Router>
