@@ -23,13 +23,13 @@ export const MoveObject = () => {
     }
   ])
   const [box2, setBox2] = useState([{
-    city: 'Đà Nẵng',
+    city: 'Cần thơ',
     isCheck: false
   }])
   return (
     <div className='move-object'>
       <Box1 box1={box1} setBox1={setBox1} />
-      <Arrow box1={box1} setBox1={setBox1} box2={box2} setBox2={setBox2}/>
+      <Arrow box1={box1} setBox1={setBox1} box2={box2} setBox2={setBox2} />
       <Box2 box2={box2} setBox2={setBox2} />
     </div>
   )

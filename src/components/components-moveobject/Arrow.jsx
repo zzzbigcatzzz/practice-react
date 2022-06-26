@@ -8,6 +8,7 @@ const Arrow = ({ box1, box2, setBox1, setBox2 }) => {
     })
 
     setBox2([...box2, ...newBox2])
+    console.log([...box2, ...newBox2])
     setBox1([...newBox1])
 
     // console.log(box1)

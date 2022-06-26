@@ -1,4 +1,4 @@
-const Operator = ({ click, result, rs }) => {
+const Operator = ({ click, input, rs }) => {
   const arrOperator = [
     {
       title: '+',
@@ -16,8 +16,8 @@ const Operator = ({ click, result, rs }) => {
     },
     {
       title: 'AC',
-      onClick: (result, rs) => {
-        result('')
+      onClick: (input, rs) => {
+        input('')
         rs('')
       }
     }
@@ -27,7 +27,7 @@ const Operator = ({ click, result, rs }) => {
       {
         arrOperator.map(v => {
           return (
-            <OperatorBtn key={v.title} value={v.title} click={v.onClick} result={result} rs={rs} />
+            <OperatorBtn key={v.title} value={v.title} click={v.onClick} input={input} rs={rs} />
           )
         })
       }
@@ -36,16 +36,16 @@ const Operator = ({ click, result, rs }) => {
 }
 
 const OperatorBtn = (prop) => {
-  const { value, click, result, rs } = prop
-  const handleOp = (click, result, rs, value) => {
+  const { value, click, input, rs } = prop
+  const handleOp = (click, input, rs, value) => {
     if (['/', '*', '-', '+'].includes(value)) {
       click(value)
     } else {
-      click(result, rs)
+      click(input, rs)
     }
   }
   return (
-    <button className="btnOperator" value={value} onClick={() => handleOp(click, result, rs, value)}>{value}</button>
+    <button className="btnOperator" value={value} onClick={() => handleOp(click, input, rs, value)}>{value}</button>
   )
 }
 

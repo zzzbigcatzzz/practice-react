@@ -5,6 +5,7 @@ const Box1 = ({ box1, setBox1 }) => {
       city: '',
       isCheck: false
     })
+    console.log([...box1])
     setBox1(
       [...box1]
     )
@@ -16,7 +17,6 @@ const Box1 = ({ box1, setBox1 }) => {
       setBox1(
         [...box1]
       )
-      // console.log(box1)
     }
   }
 
@@ -41,7 +41,7 @@ const Box1 = ({ box1, setBox1 }) => {
             } else {
               return (
                 <li key={index}>
-                  <input type="checkbox" />
+                  <input type="checkbox" disabled/>
                   <input className='new-data' type="text" onKeyDown={e => handleKeyDown(e, index)} />
                 </li>
               )

@@ -4,15 +4,23 @@
   height: 150vh;
   margin: 0;
   padding: 0;
-  h1, h2 {
+
+  h1,
+  h2 {
     margin: 0;
   }
+
   main {
     max-width: 1024px;
     margin: 0 auto;
     padding-top: 100px;
+
     .heading {
-      text-align: center;
+      display: flex;
+
+      label {
+        margin-right: 20px;
+      }
     }
   }
 }

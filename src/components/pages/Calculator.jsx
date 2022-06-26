@@ -6,19 +6,19 @@ import Number from '../components-calculator/Number'
 import Operator from '../components-calculator/Operator'
 import '../../styles/components/calculator.scss'
 export const Calculator = () => {
-  const [result, setResult] = React.useState('')
+  const [input, setInput] = React.useState('')
   const [rs, setRs] = React.useState('')
 
   const opr = ['/', '*', '-', '+', '.']
   const handleClickNumberButton = (value) => {
     if (
-      (opr.includes(value) && result === '') ||
-      (opr.includes(value) && opr.includes(result.slice(-1)))
+      (opr.includes(value) && input === '') ||
+      (opr.includes(value) && opr.includes(input.slice(-1)))
     ) {
       return
     }
-    const r = result + String(value)
-    setResult(r)
+    const r = input + String(value)
+    setInput(r)
   }
 
   const handleEqual = (value) => {
@@ -27,11 +27,11 @@ export const Calculator = () => {
   return (
     <div className='calculator'>
       <h2>CALCULATOR</h2>
-      <Input result={result} />
+      <Input input={input} />
       <Result rs={rs} />
       <div className='btn'>
-        <Number click={handleClickNumberButton} equal={handleEqual} input={result} />
-        <Operator click={handleClickNumberButton} result={setResult} rs={setRs} />
+        <Number click={handleClickNumberButton} equal={handleEqual} input={input} />
+        <Operator click={handleClickNumberButton} input={setInput} rs={setRs} />
       </div>
     </div>
   )

@@ -1,8 +1,8 @@
 
 const Input = (props) => {
-  const { result } = props
+  const { input } = props
   return (
-    <input id='input' type='text' disabled value={result} />
+    <input id='input' type='text' disabled value={input} />
   )
 }
 export default Input
