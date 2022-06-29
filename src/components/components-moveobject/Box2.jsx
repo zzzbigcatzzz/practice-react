@@ -39,7 +39,7 @@ const Box2 = ({ box2, setBox2 }) => {
             } else {
               return (
                 <li key={index}>
-                  <input type="checkbox" />
+                  <input type="checkbox" disabled/>
                   <input className='new-data' type="text" onKeyDown={e => handleKeyDown(e, index)} />
                 </li>
               )
