@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
 const CoppyButton = ({ value }) => {
   const [btnValue, setBtnValue] = useState(true)
   const handleCopy = () => {
-    setBtnValue(!btnValue)
     if (btnValue) {
       navigator.clipboard.writeText(value)
+      setBtnValue(false)
     }
   }
+  useEffect(() => {
+    if (!btnValue) {
+      setTimeout(() => {
+        setBtnValue(true)
+      }, 2000)
+    }
+  }, [btnValue])
   return (
 
     <button id="copy" onClick={handleCopy} style={{
